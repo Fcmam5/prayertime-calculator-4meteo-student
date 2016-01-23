@@ -58,7 +58,7 @@ public class Main {
         laDate = new Date(jj,mm,aa);
 
         //Calculer l'equation du temps
-        double et =  (0.128*Math.sin(0.9856*(jj-2))+0.164*Math.sin(2*0.9856*(jj+10)));
+        double et =  (0.128*Math.sin(0.9856*(laDate.getNbJours()-2))+0.164*Math.sin(2*0.9856*(laDate.getNbJours()+10)));
 
         //Calculer w
         double w = Math.acos((Math.sin(hight)-Math.sin(s_dcl)*Math.sin(g_ltitu))/(Math.cos(g_ltitu)*Math.cos(s_dcl)));
