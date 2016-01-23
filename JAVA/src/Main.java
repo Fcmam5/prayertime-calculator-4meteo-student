@@ -17,10 +17,12 @@ public class Main {
          * g_ltitu: Latitude
          * jj,mm,aa : Jours,Mois,Année
          * h,m,s : heur,minute,second
+         * higt: l'hauteur
+         * w:
          */
 
 
-        double w =0.0172;
+        //double w =0.0172;
         int jj;
         int mm;
         int aa;
@@ -49,12 +51,26 @@ public class Main {
         System.out.println("Donner la declinaison");
         double s_dcl = clavier.nextDouble();
 
+        System.out.println("Donner l'hauteur");
+        double hight = clavier.nextDouble();
 
         //Crée l'objet Date JJ/MM/AA
         laDate = new Date(jj,mm,aa);
 
         //Calculer l'equation du temps
-        float et = (float) (0.128*Math.sin(0.9856*(jj-2))+0.164*Math.sin(2*0.9856*(jj+10)));
-        
+        double et =  (0.128*Math.sin(0.9856*(jj-2))+0.164*Math.sin(2*0.9856*(jj+10)));
+
+        //Calculer w
+        double w = Math.acos((Math.sin(hight)-Math.sin(s_dcl)*Math.sin(g_ltitu))/(Math.cos(g_ltitu)*Math.cos(s_dcl)));
+
+        //Calculer TSV
+        double tsv = 12 - (w / 15);
+
+        //Calculer TSM
+        double tsm = et + tsv;
+
+        //Calculer TL
+        double tl = tsm + (l_lngt/15) + 1;
+
     }
 }
