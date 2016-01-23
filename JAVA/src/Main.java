@@ -71,6 +71,7 @@ public class Main {
 
         //Calculer TL
         double tl = tsm + (l_lngt/15) + 1;
-
+		
+		System.out.println("Tl= "+tl);
     }
 }

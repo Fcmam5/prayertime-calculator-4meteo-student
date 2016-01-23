@@ -62,28 +62,28 @@ main()
     int jj;
     int mm;
     int aa;
-    printf("Donner le jours");
+    printf("Donner le jours\n");
     scanf("%d",&jj);
 
-    printf("Donner le mois");
+    printf("Donner le mois\n");
     scanf("%d",&mm);
 
-    printf("Donne l'annee");
+    printf("Donne l'annee\n");
     scanf("%d",&aa);
 
-    printf("Donner latitude");
+    printf("Donner latitude\n");
     float g_ltitu;
     scanf("%f",&g_ltitu);
 
-    printf("Donner longitude");
+    printf("Donner longitude\n");
     float l_lngt;
     scanf("%f",&l_lngt);
 
-    printf("Donner la declinaison");
+    printf("Donner la declinaison\n");
     float s_dcl;
     scanf("%f",&s_dcl);
 
-    printf("Donner l'hauteur");
+    printf("Donner l'hauteur\n");
     float hight;
     scanf("%f",&hight);
 
@@ -103,5 +103,7 @@ main()
     //Calculer TL
     float tl = tsm + (l_lngt/15) + 1;
 
-//system("pause");
+    printf("\n\nTl= %f",tl);
+
+    system("pause");
 }
